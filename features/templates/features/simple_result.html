@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}
+    Find Similar Result
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Find Similar Result</h1>
+
+    <div class="card">
+      <div class="card-header">
+        {{text}}
+      </div>
+      <ul class="list-group list-group-flush">
+         {% for result_text in texts %}
+        <li class="list-group-item">
+            {{forloop.counter}}) {{result_text.text}} - ({{result_text.cos}})
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <p></p>
+    <a class="btn btn-primary" href="{% url 'features:simple' %}">Try again</a>
+</div>
+{% endblock %}
