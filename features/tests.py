@@ -1,8 +1,8 @@
-from django.test import TestCase
+from django.test import SimpleTestCase
 from django.urls import reverse
 
 
-class TestIndexView(TestCase):
+class TestIndexView(SimpleTestCase):
 
     def setUp(self):
         self.url = '/'
@@ -16,7 +16,7 @@ class TestIndexView(TestCase):
         self.assertContains(self.response, f'href="{simple_url}"')
 
 
-class TestFindSimilarSimpleView(TestCase):
+class TestFindSimilarSimpleView(SimpleTestCase):
 
     def setUp(self):
         self.url = '/simple/'
@@ -38,7 +38,7 @@ class TestFindSimilarSimpleView(TestCase):
         self.assertRedirects(response, expected_url, 302)
 
 
-class TestFindSimilarSimpleResultView(TestCase):
+class TestFindSimilarSimpleResultView(SimpleTestCase):
 
     def setUp(self):
         self.url = '/simple/result/?text=the same&texts=the same=1.0,the other=0.5'
