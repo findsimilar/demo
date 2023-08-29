@@ -2,7 +2,7 @@
 The demo project website to show [find-similar](https://github.com/findsimilar/find-similar) features
 
 ## Available
-It will be available soon on [demo.findsimilar.org](https://demo.findsimilar.org)
+It will be available soon on [demo.findsimilar.org](http://demo.findsimilar.org)
 
 ## For developers
 
