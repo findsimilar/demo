@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView, FormView
-from .forms import FindSimilarSimpleForm
+from .forms import FindSimilarSimpleForm, TEXTS_FILM_EXAMPLE, TEXT_FILM_EXAMPLE, DEFAULT_SEPARATOR
 from find_similar import find_similar
 
 
@@ -11,13 +11,20 @@ class FindSimilarSimpleView(FormView):
     template_name = 'features/simple.html'
     form_class = FindSimilarSimpleForm
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['example_text'] = TEXT_FILM_EXAMPLE
+        context['example_texts'] = DEFAULT_SEPARATOR.join(TEXTS_FILM_EXAMPLE)
+        return context
+
     def form_valid(self, form):
         data = form.cleaned_data
+        self.separator = data.get('separator')
         text = data.get('text')
         self.text = text
         texts = data.get('texts')
-        text_list = texts.split(',')
-        self.result = find_similar(self.text, text_list)
+        text_list = texts.split(self.separator)
+        self.result = find_similar(self.text, text_list, count=100)
         return super().form_valid(form)
 
     def get_success_url(self):

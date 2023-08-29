@@ -31,7 +31,8 @@ class TestFindSimilarSimpleView(SimpleTestCase):
     def test_post(self):
         data = {
             'text': 'the same',
-            'texts': 'the same,the other'
+            'texts': 'the same,the other',
+            'separator': ','
         }
         response = self.client.post(self.url, data=data)
         expected_url = '/simple/result/?text=the same&texts=the same=1.0,the other=0.5'
