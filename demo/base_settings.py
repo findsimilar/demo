@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # my
     'features',
+    # other
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +130,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MAX_TEXT_LENGTH = 40
 MAX_TEXT_LIST_COUNT = 50
 TEXT_LIST_LENGTH_LENGTH = MAX_TEXT_LENGTH * MAX_TEXT_LIST_COUNT
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        # 'rest_framework.throttling.UserRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '1000/day',
+        # 'user': '1000/day'
+    }
+}
