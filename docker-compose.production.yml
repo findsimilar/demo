@@ -1,0 +1,26 @@
+version: '3.9'
+
+volumes:
+  static:
+
+services:
+  demo:
+    image: findsimilar/demo
+    restart: always
+    expose:
+      - 8080
+    volumes:
+      - static:/static/
+    command: bash -c "
+      python manage.py collectstatic --noinput --settings=demo.prod_settings
+      && gunicorn demo.wsgi -b 0.0.0.0:8080
+      "
+  nginx:
+    image: findsimilar/demo-nginx
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - static:/etc/nginx/static/
+    depends_on:
+      - demo
