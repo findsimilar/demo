@@ -1,7 +1,4 @@
 <script>
-	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
 
 	import {
         Collapse,
@@ -26,11 +23,11 @@
 </script>
 
 <header>
-  <Navbar color="primary" light expand="md">
+  <Navbar class="navbar navbar-expand-lg fixed-top bg-primary" data-bs-theme="dark">
       <NavbarBrand href="/">demo.findsimilar.org</NavbarBrand>
       <NavbarToggler on:click={() => (isOpen = !isOpen)} />
       <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
-        <Nav class="ms-auto" navbar>
+        <Nav navbar>
           <NavItem>
             <NavLink href="/">Home</NavLink>
           </NavItem>

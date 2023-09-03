@@ -1,6 +1,5 @@
 <script>
 	import logo from '$lib/images/logo.png';
-	import { Button } from 'sveltestrap';
 </script>
 
 <svelte:head>
@@ -9,7 +8,7 @@
 </svelte:head>
 
 <div class="text-center bg-body-tertiary rounded-3">
-    <img src="{logo}" class="bi mt-4 mb-3" width="100" height="100">
+    <img src="{logo}" class="bi mt-4 mb-3" width="100" height="100" alt="FindSimilar Logo">
     <h1 class="text-body-emphasis">Welcome to FindSimilar Demo Project!</h1>
     <p class="col-lg-8 mx-auto fs-5 text-muted">
       You can check the main features here.
