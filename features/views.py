@@ -1,5 +1,8 @@
 from django.views.generic import TemplateView, FormView
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from .forms import FindSimilarSimpleForm, TEXTS_FILM_EXAMPLE, TEXT_FILM_EXAMPLE, DEFAULT_SEPARATOR
+from .serializers import FindSimilarSerializer, TokenTextSerializer
 from find_similar import find_similar
 
 
@@ -55,3 +58,13 @@ class FindSimilarSimpleResultView(TemplateView):
             texts.append({'text': result_text, 'cos': cos})
         context['texts'] = texts
         return context
+
+
+class FindSimilarApiView(APIView):
+
+    def post(self, request, format=None):
+        serializer = FindSimilarSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        result = serializer.save()
+        result_serializer = TokenTextSerializer(result, many=True)
+        return Response(result_serializer.data)

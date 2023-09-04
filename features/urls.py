@@ -23,4 +23,5 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('simple/', views.FindSimilarSimpleView.as_view(), name='simple'),
     path('simple/result/', views.FindSimilarSimpleResultView.as_view(), name='simple_result'),
+    path('api/', views.FindSimilarApiView.as_view(), name='api'),
 ]
