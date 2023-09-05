@@ -21,7 +21,7 @@ jobs:
         pip install coverage
     - name: Run tests
       run: |
-        coverage run --source='.' manage.py test features
+        coverage run --source='.' manage.py test
         coverage html
     - name: Archive code coverage
       uses: actions/upload-artifact@v3
