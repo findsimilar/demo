@@ -13,6 +13,6 @@ It will be available soon on [demo.findsimilar.org](http://demo.findsimilar.org)
 * virtual environment is recommended
 * install requirements `pip install -r requirements.txt`
 * run tests `python manage.py test`
-* run server `python manage.py runerver`
+* run server `python manage.py runserver`
 * have a fun :)
 * create a pull request with your patch
