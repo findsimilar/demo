@@ -1,4 +1,4 @@
-# .github/workflows/run-tests.yml
+# .GitHub/workflows/run-tests.yml
 name: Run tests
 
 on:
