@@ -22,6 +22,7 @@ jobs:
     - name: Run tests
       run: |
         coverage run --source='.' manage.py test
+        coverage report --fail-under=100
         coverage html
     - name: Archive code coverage
       uses: actions/upload-artifact@v3
