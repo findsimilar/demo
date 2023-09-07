@@ -1,8 +1,9 @@
 # demo
-The demo project website to show [find-similar](https://github.com/findsimilar/find-similar) features
+The DEMO API project website to show [find-similar](https://github.com/findsimilar/find-similar) features
 
 ## Available
-It will be available soon on [demo.findsimilar.org](http://demo.findsimilar.org)
+It available on [api.findsimilar.org](http://api.findsimilar.org)
+Front-end webapp available on [demo.findsimilar.org](https://demo.findsimilar.org)
 
 ## For developers
 
