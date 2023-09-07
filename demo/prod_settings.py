@@ -7,9 +7,10 @@ from .base_settings import *
 
 DEBUG = False
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['http://localhost:8000', 'http://127.0.0.1:8000', 'api.findsimilar.org']
+CSRF_TRUSTED_ORIGINS = ['http://api.findsimilar.org', 'http://188.64.12.238:8000']
 STATIC_ROOT = 'static'
 
 CORS_ALLOWED_ORIGINS = [
     'http://demo.findsimilar.org',
+    'http://188.64.12.238',
 ]
