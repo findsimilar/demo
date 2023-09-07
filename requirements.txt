@@ -3,3 +3,4 @@ find-similar==1.0.1
 djangorestframework==3.14.0
 markdown2==2.4.10
 django-filter==23.2
+django-cors-headers==4.2.0
