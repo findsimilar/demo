@@ -28,5 +28,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: code-coverage-report
-        path: htmlcov/index.html
-        asset_content_type: html
+        path: htmlcov
