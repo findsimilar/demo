@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # other
     'rest_framework',
     'corsheaders',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'demo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
