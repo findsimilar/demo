@@ -1,12 +1,10 @@
 """
 DEV-settings
 """
-import os
-from demo.base_settings import BASE_DIR
+from .base_settings import *
 
-
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    'http://localhost:5173',
 ]
