@@ -13,6 +13,7 @@ class FindSimilarSerializer(serializers.Serializer):
     language = serializers.CharField(required=False)
     count = serializers.IntegerField(default=5)
     dictionary = serializers.DictField(required=False)
+    remove_stopwords = serializers.BooleanField(required=False)
 
     def create(self, validated_data):
         return find_similar(**validated_data)
