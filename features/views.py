@@ -9,7 +9,7 @@ class FindSimilarApiView(APIView):
         operation_description="Find similar objects",
         request_body=FindSimilarSerializer,
     )
-    def post(self, request, format=None):
+    def post(self, request):
         serializer = FindSimilarSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         result = serializer.save()

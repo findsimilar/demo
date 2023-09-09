@@ -8,7 +8,7 @@ class TestFindSimilarApi(APISimpleTestCase):
             "texts": ["one", "two", "one two"],
             "language": "russian",
             "count": 10,
-            # 'dictionary': {'some': 'analog'} # https://github.com/findsimilar/find-similar/issues/7
+            # 'dictionary': {'some': 'analog'} https://github.com/findsimilar/find-similar/issues/7
         }
         self.response = self.client.post("/api/", data=self.valid_data)
 

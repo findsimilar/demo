@@ -434,7 +434,13 @@ disable=raw-checker-failed,
         missing-function-docstring,
         import-error,
         wildcard-import,
-        import-error
+        import-error,
+        unused-wildcard-import,
+        too-few-public-methods,
+        invalid-name,
+        unused-variable,
+        import-outside-toplevel,
+        duplicate-code
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
