@@ -5,7 +5,6 @@ from .serializers import FindSimilarSerializer, TokenTextSerializer
 
 
 class FindSimilarApiView(APIView):
-
     @swagger_auto_schema(
         operation_description="Find similar objects",
         request_body=FindSimilarSerializer,
