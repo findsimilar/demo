@@ -5,12 +5,11 @@ from .serializers import FindSimilarSerializer, TokenTextSerializer
 
 
 class FindSimilarApiView(APIView):
-
     @swagger_auto_schema(
         operation_description="Find similar objects",
         request_body=FindSimilarSerializer,
     )
-    def post(self, request, format=None):
+    def post(self, request):
         serializer = FindSimilarSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         result = serializer.save()
