@@ -1,4 +1,10 @@
 [MAIN]
+disable=
+    E1101, #  Dynamic attributes
+    C0301, #  Line too long
+    E0307, #  __str__ does not return str
+    W0223, #  method is not overriden in child class
+
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
 # 3 compatible code, which means that the block might have code that exists

@@ -17,4 +17,3 @@ class TestExampleViewSet(APITestCase):
 
     def test_response(self):
         self.assertEqual(self.response.json(), self.example_dict)
-

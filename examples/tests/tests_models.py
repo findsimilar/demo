@@ -1,6 +1,6 @@
 from django.test import TestCase, SimpleTestCase
+from find_similar.examples import examples_set
 from examples.models import Text, Example
-from find_similar.examples import get_example, examples_set
 
 
 class TestText(SimpleTestCase):
