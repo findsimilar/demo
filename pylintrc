@@ -4,6 +4,7 @@ disable=
     C0301, #  Line too long
     E0307, #  __str__ does not return str
     W0223, #  method is not overriden in child class
+    W0613, #  unused argument
 
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
