@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from rest_framework.viewsets import GenericViewSet
+from rest_framework.mixins import RetrieveModelMixin
+from .serializers import ExampleSerializer
+from .models import Example
 
-# Create your views here.
+
+class ExampleViewSet(RetrieveModelMixin, GenericViewSet):
+    serializer_class = ExampleSerializer
+    queryset = Example.objects.all()
+    lookup_field = 'name'

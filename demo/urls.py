@@ -43,6 +43,7 @@ urlpatterns = [
     path("", swagger_schema, name="docs"),
     path("admin/", admin.site.urls),
     path("", include("features.urls")),
+    path("api/", include("examples.urls")),
     path("api-auth/", include("rest_framework.urls")),
     # open api docs
     path(
