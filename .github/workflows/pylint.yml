@@ -18,4 +18,4 @@ jobs:
         pip install pylint==2.17.5
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py')
+        make lint

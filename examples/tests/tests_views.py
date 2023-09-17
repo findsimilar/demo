@@ -8,12 +8,17 @@ class TestExampleViewSet(APITestCase):
             'text': 'one two',
             'texts': ['one', 'two']
         }
-        example_name = 'some_name'
-        self.example = Example.load_from_dict(example_name, self.example_dict)
-        self.response = self.client.get(f"/api/examples/{example_name}/")
+        self.example_name = 'some_name'
+        self.example = Example.load_from_dict(self.example_name, self.example_dict)
 
     def test_status_code(self):
-        self.assertEqual(self.response.status_code, 200)
+        response = self.client.get(f"/api/examples/{self.example_name}/")
+        self.assertEqual(response.status_code, 200)
 
     def test_response(self):
-        self.assertEqual(self.response.json(), self.example_dict)
+        response = self.client.get(f"/api/examples/{self.example_name}/")
+        self.assertEqual(response.json(), self.example_dict)
+
+    def test_list_response(self):
+        response = self.client.get('/api/examples/')
+        self.assertEqual(response.json(), [{'name': self.example_name}])
