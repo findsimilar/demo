@@ -11,3 +11,6 @@ coverage:
 
 lint:
 	pylint $(shell git ls-files '*.py')
+
+load_examples:
+	python manage.py load_examples
