@@ -1,3 +1,4 @@
+from copy import deepcopy
 from rest_framework.test import APITestCase
 from examples.serializers import ExampleSerializer, ExampleNameSerializer
 from examples.models import Example
@@ -13,7 +14,11 @@ class TestExampleSerializer(APITestCase):
 
     def test_serializer(self):
         serializer = ExampleSerializer(self.example)
-        self.assertEqual(serializer.data, self.example_dict)
+        expected_dict = deepcopy(self.example_dict)
+        expected_dict.update(
+            {'name': 'some_name'}
+        )
+        self.assertEqual(serializer.data, expected_dict)
 
 
 class TestExampleNameSerializer(APITestCase):
