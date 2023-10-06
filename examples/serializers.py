@@ -8,7 +8,7 @@ class ExampleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Example
-        fields = ('text', 'texts')
+        fields = ('name', 'text', 'texts')
 
 
 class ExampleNameSerializer(serializers.ModelSerializer):
