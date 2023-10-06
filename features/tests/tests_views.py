@@ -23,6 +23,17 @@ class TestFindSimilarApi(APISimpleTestCase):
         ]
         self.assertEqual(self.response.json(), expected_result)
 
+    def test_error_language(self):
+        data = {
+            "text_to_check": "one two",
+            "texts": ["one", "two", "one two"],
+            "language": "unexpected language",
+            "count": 10,
+        }
+        response = self.client.post("/api/", data=data)
+        self.assertEqual(response.status_code, 400)
+        self.assertIn('language', response.json())
+
 
 class TestDocsViews(APISimpleTestCase):
     def setUp(self) -> None:
