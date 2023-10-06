@@ -1,5 +1,7 @@
 from rest_framework import serializers
+from rest_framework.serializers import ValidationError
 from find_similar import find_similar
+from find_similar.calc_models import LanguageNotFoundException
 
 
 class TokenTextSerializer(serializers.Serializer):
@@ -16,4 +18,10 @@ class FindSimilarSerializer(serializers.Serializer):
     remove_stopwords = serializers.BooleanField(required=False)
 
     def create(self, validated_data):
-        return find_similar(**validated_data)
+        try:
+            return find_similar(**validated_data)
+        except LanguageNotFoundException as exc:
+            language = validated_data.get('language')
+            raise ValidationError({
+                'language': f'"{language}" is not supported'
+            }) from exc

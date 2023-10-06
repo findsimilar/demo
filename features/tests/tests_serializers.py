@@ -1,4 +1,5 @@
 from rest_framework.test import APISimpleTestCase
+from rest_framework.serializers import ValidationError
 from find_similar import TokenText
 from features.serializers import FindSimilarSerializer, TokenTextSerializer
 
@@ -28,20 +29,35 @@ class TestFindSimilarSerializer(APISimpleTestCase):
 
     def test_invalid_serializer(self):
         invalid_data_list = [
-            {},
+            {},  # empty
             {
                 "text_to_check": "one two",
-                "texts": "one two",
+                "texts": "one two",  # not list
             },
             {
                 "text_to_check": "one two",
                 "texts": ["one two"],
-                "count": "abc",
+                "count": "abc",  # not int
             },
         ]
         for invalid_data in invalid_data_list:
             serializer = FindSimilarSerializer(data=invalid_data)
-            self.assertFalse(serializer.is_valid())
+            with self.subTest(msg=str(invalid_data)):
+                self.assertFalse(serializer.is_valid())
+
+    def test_invalid_language(self):
+        valid_data = {
+            "text_to_check": "one two",
+            "texts": ["one", "two", "one two"],
+            "language": "unexpected language",
+            "count": 10,
+        }
+
+        serializer = FindSimilarSerializer(data=valid_data)
+        serializer.is_valid(raise_exception=True)
+
+        with self.assertRaises(ValidationError):
+            serializer.save()
 
 
 class TestTextTokenSerializer(APISimpleTestCase):
