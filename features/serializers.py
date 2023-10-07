@@ -23,5 +23,5 @@ class FindSimilarSerializer(serializers.Serializer):
         except LanguageNotFoundException as exc:
             language = validated_data.get('language')
             raise ValidationError({
-                'language': f'"{language}" is not supported'
+                'language': [f'"{language}" is not supported']
             }) from exc

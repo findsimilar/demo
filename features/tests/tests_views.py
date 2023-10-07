@@ -32,7 +32,9 @@ class TestFindSimilarApi(APISimpleTestCase):
         }
         response = self.client.post("/api/", data=data)
         self.assertEqual(response.status_code, 400)
-        self.assertIn('language', response.json())
+        response_json = response.json()
+        self.assertIn('language', response_json)
+        self.assertTrue(isinstance(response_json['language'], list))
 
 
 class TestDocsViews(APISimpleTestCase):
