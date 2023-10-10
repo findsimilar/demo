@@ -7,6 +7,8 @@ Front-end webapp available on [demo.findsimilar.org](https://demo.findsimilar.or
 
 ## For developers
 
+### Quickstart
+
 * check the [issues page](https://github.com/findsimilar/demo/issues)
 * pick one or create new your own
 * fork this repository
@@ -17,3 +19,9 @@ Front-end webapp available on [demo.findsimilar.org](https://demo.findsimilar.or
 * run server `python manage.py runserver`
 * have a fun :)
 * create a pull request with your patch
+
+### More Information
+
+For more information for developers please 
+visit [Open Source Collaboration](https://github.com/findsimilar/find-similar#open-source-collaboration)
+section in the [main package repository](https://github.com/findsimilar/find-similar)
