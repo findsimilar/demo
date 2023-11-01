@@ -1,4 +1,5 @@
 # Demo
+<hr>
 The DEMO API project website to show [find-similar](https://github.com/findsimilar/find-similar) features
 
 ## Available
