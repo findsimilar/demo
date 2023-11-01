@@ -21,11 +21,11 @@
 - [x] [Availability of Documentation](https://github.com/libresource/open-source-checklist#availability-of-documentation)
 - [x] [FAQ](https://github.com/libresource/open-source-checklist#faq)
 - [x] [Examples Output and Screenshots](https://github.com/libresource/open-source-checklist#examples-output-and-screenshots)
-- [ ] [License](https://github.com/libresource/open-source-checklist#license)
+- [x] [License](https://github.com/libresource/open-source-checklist#license)
 - [x] [Code of Conduct](https://github.com/libresource/open-source-checklist#code-of-conduct)
 - [x] [Security Policy](https://github.com/libresource/open-source-checklist#security-policy)
 - [x] [Governance](https://github.com/libresource/open-source-checklist#governance)
-- [ ] [Issue templates](https://github.com/libresource/open-source-checklist#issue-templates)
+- [x] [Issue templates](https://github.com/libresource/open-source-checklist#issue-templates)
 - [x] [Support](https://github.com/libresource/open-source-checklist#support)
 
 [CI and CD](https://github.com/libresource/open-source-checklist#ci-and-cd)
