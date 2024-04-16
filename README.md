@@ -3,9 +3,11 @@
 The DEMO API project website to show [find-similar](https://github.com/findsimilar/find-similar) features
 
 ## Run in Docker
+```
 docker compose pull 
-docker compose  down
+docker compose down
 docker compose up
+```
 
 ## Open Source Project
 
