@@ -2,9 +2,10 @@
 <hr>
 The DEMO API project website to show [find-similar](https://github.com/findsimilar/find-similar) features
 
-## Available
-It available on [api.findsimilar.org](http://api.findsimilar.org)
-Front-end webapp available on [demo.findsimilar.org](https://demo.findsimilar.org)
+## Run in Docker
+docker compose pull 
+docker compose  down
+docker compose up
 
 ## Open Source Project
 
